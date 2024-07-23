@@ -1,0 +1,61 @@
+.bodyIndex {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+
+    .headerIndex {
+        background-color: $colorHeader;
+        display: flex;
+        flex-direction: column;
+
+        .tituloYLogo {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #alertas {
+            background-color: red;
+        }
+    }
+
+    .mainIndex {
+        background-color: $colorSection;
+
+        div {
+            margin: 10px;
+            background-color: white
+        }
+
+        .calculadorasIndex {
+            display: flex;
+            flex-direction: column;
+
+            .dobleCalculadoraEspacio {
+                display: flex;
+                flex-direction: row;
+                background-color: $colorSection;
+                margin: 0;
+                div {
+                    width: 50%;
+                }
+
+                .grasaCoporalMarineMetodo {
+                    h2 {
+                        margin: 0;
+                    }
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        margin: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .footerIndex {
+        background-color: $colorFooter;
+    }
+
+}

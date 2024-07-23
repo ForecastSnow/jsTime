@@ -1,0 +1,57 @@
+* {
+  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.bodyIndex {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+.bodyIndex .headerIndex {
+  background-color: #FFA43A;
+  display: flex;
+  flex-direction: column;
+}
+.bodyIndex .headerIndex .tituloYLogo {
+  display: flex;
+  flex-direction: row;
+}
+.bodyIndex .headerIndex #alertas {
+  background-color: red;
+}
+.bodyIndex .mainIndex {
+  background-color: #525558;
+}
+.bodyIndex .mainIndex div {
+  margin: 10px;
+  background-color: white;
+}
+.bodyIndex .mainIndex .calculadorasIndex {
+  display: flex;
+  flex-direction: column;
+}
+.bodyIndex .mainIndex .calculadorasIndex .dobleCalculadoraEspacio {
+  display: flex;
+  flex-direction: row;
+  background-color: #525558;
+  margin: 0;
+}
+.bodyIndex .mainIndex .calculadorasIndex .dobleCalculadoraEspacio div {
+  width: 50%;
+}
+.bodyIndex .mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo h2 {
+  margin: 0;
+}
+.bodyIndex .mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo div {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+}
+.bodyIndex .footerIndex {
+  background-color: #75C7FF;
+}
+
+/*# sourceMappingURL=main.css.map */
