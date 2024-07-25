@@ -90,8 +90,6 @@ const datosPersona = function () {
                 </tr>
             </table>`);
 }
-
-
 datosPersona()
 actualizarListaHTML();
 
@@ -104,11 +102,11 @@ const nuevaPersona = function () {
         alertas.innerHTML = "<p>Ingrese el nombre de la persona actual antes de añadir otra!! </p>"
     } else {
         personasArray.push(new Persona());
+        idSeleccionado = idSeleccionado+1;
         alertas.innerHTML = "";
     }
 
     actualizarListaHTML();
-    idSeleccionado = idSeleccionado+1;
     datosPersona();
 }
 

@@ -2,11 +2,13 @@
     display: flex;
     flex-direction: row;
     margin: 0;
+    background-color: beige;
 
     .headerIndex {
         background-color: $colorHeader;
         display: flex;
         flex-direction: column;
+
 
         .tituloYLogo {
             display: flex;
@@ -18,6 +20,7 @@
         }
     }
 
+    
     .mainIndex {
         background-color: $colorSection;
 
@@ -56,6 +59,8 @@
 
     .footerIndex {
         background-color: $colorFooter;
+        width: 180px;
+        
     }
 
 }
