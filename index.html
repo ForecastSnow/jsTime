@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymBroCalculator</title>
+    <link rel="icon" href="./assets/img/zyssPose.webp" type="image/png">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,82 +13,105 @@
     <!-- link css-->
     <link rel="stylesheet" href="./assets/css/main.css">
     <!-- javaScript -->
-    <script defer src="assets/js/scripts.js"></script>
+    <!-- <script defer src="assets/js/scripts.js"></script> -->
 </head>
 
 <body class="bodyIndex">
     <header class="headerIndex">
         <div class="tituloYLogo">
-            <h1><a href="">GymBro Calculator</a></h1> <img src="" alt="fotito toda fachera">
+            <h1 class="titulo">Gymbro Calculator</h1>
+            <a href="./index.html"><img class="imgIcono" src="./assets/img/icono.png" alt="icono Gymbro"></a>
+            <img class="zyzzPose" src="./assets/img/zyssPose.webp" alt="foto pose zyzz">
         </div>
-        <div class="persona">
-            <img class="fotoPersona" src="" alt="fotito alta facha ">
-            <table id="datosPersona">
-                <tr>
-                    <th><input id="nombrePersona" type="text" placeholder="Nombre"></th>
 
-                </tr>
+
+        <div class="persona">
+
+            <div class="fotoPersona">
+
+                <img src="./assets/img/elBotasMamao.jpg" alt="fotito alta facha ">
+
+            </div>
+
+
+            <div class="nombrePersona">
+                <input id="nombrePersona" type="text" placeholder="Nombre">
+            </div>
+
+
+            <table class="datosPersona" id="datosPersona">
+
                 <tr>
-                    <th>Edad: </th>
-                    <th><input id="edadPersona" type="number" placeholder="20"></th>
-                    <th> años</th>
+                    <th>Edad </th>
+                    <th><input id="edadPersona" type="number" placeholder="0" maxlength="3"></th>
+                    <th> AÑOS</th>
                 </tr>
+
                 <tr>
-                    <th>Altura: </th>
-                    <th><input id="alturaPersona" type="number" placeholder="180"></th>
+                    <th>Altura </th>
+                    <th><input id="alturaPersona" type="number" placeholder="0" maxlength="3"></th>
                     <th> CM</th>
                 </tr>
+
                 <tr>
-                    <th>Peso: </th>
-                    <th><input id="pesoPersona" type="number" placeholder="66"></th>
+                    <th>Peso </th>
+                    <th><input id="pesoPersona" type="number" placeholder="0" maxlength="3"></th>
                     <th> KG</th>
                 </tr>
+
                 <tr>
-                    <th>Genero: </th>
+                    <th>Genero </th>
                     <th><select id="generoPersona" name="Genero">
                             <option value="0">Femenino</option>
                             <option value="1">Masculino</option>
                         </select>
                     </th>
                 </tr>
+
                 <tr>
-                    <th>Grasa Coporal: </th>
-                    <th><input id="grasaCorporalPersona" type="number" placeholder="20"></th>
+                    <th>Grasa Corp </th>
+                    <th><input id="grasaCorporalPersona" type="number" placeholder="0"></th>
                     <th> %</th>
                 </tr>
+
             </table>
-            <button id="botonEditarPersona">Editar Persona</button>
+            <button class="botonGuardarPersona" id="botonEditarPersona">Guardar Persona</button>
             <div id="alertas">
 
             </div>
         </div>
     </header>
     <main class="mainIndex">
+
         <section class="calculadorasIndex">
 
             <div class="dobleCalculadoraEspacio">
 
                 <div class="cbdc">
+                    <div>
+                        <input id="minutos" type="text" placeholder="Minutos">
+                        <button id="calcularCDBC">calcular</button>
+                    </div>
                     <table id="cbdcTable">
                         <tr>
-                            <th><input id="minutos" type="text" placeholder="Minutos"></th>
-                            <th><button id="calcularCDBC">calcular</button></th>
-                        </tr>
-                        <tr>
                             <th>Intensidad</th>
-                            <th>Gasto Calorico</th>
+                            <th>Gasto Cal.</th>
                         </tr>
                         <tr>
-                            <th>Baja 70-110PPM</th>
+                            <th>70-110PPM</th>
+                            <th></th>
                         </tr>
                         <tr>
-                            <th>Media 90-130PPM</th>
+                            <th>90-130PPM</th>
+                            <th></th>
                         </tr>
                         <tr>
-                            <th>Alta 130-160PPM</th>
+                            <th>130-160PPM</th>
+                            <th></th>
                         </tr>
                         <tr>
-                            <th>Muy alta 160-200PPM</th>
+                            <th>160-200PPM</th>
+                            <th></th>
                         </tr>
                     </table>
 
@@ -96,18 +120,21 @@
                 <div class="grasaCoporalMarineMetodo">
                     <h2>Calculadora de grasa</h2>
                     <div id="calculadoraGrasa" class="inputsCalculadoraGrasa">
-                        <input id="cintura" type="number" placeholder="Circunferencia cintura CM">
-                        <input id="cuello" type="number" placeholder="Circunfenrecia cuello CM">
-                        <input id="caderas" type="number" placeholder="Circunfenrecia Caderas CM">
+                        <input id="cintura" type="number" placeholder="Circ. Cintura (CM)">
+                        <input id="cuello" type="number" placeholder="Circ. Cuello (CM)">
+                        <input id="caderas" type="number" placeholder="Circ. Caderas (CM)">
+                    </div>
+                    <div class="botonYResultado">
                         <button id="calcularGrasa">Calcular</button>
+                        <p id="resultadoGrasa">0%</p>
                     </div>
 
-                    <p id="resultadoGrasa"></p>
+
 
                 </div>
             </div>
 
-            <div id="ffmi" class="ffmi">
+            <div id="ffmi" class="ffmiCalculadora">
 
                 <p>Calculadora FFMI</p>
                 <div class="barraProgresoFFMI">
@@ -119,7 +146,7 @@
 
             </div>
 
-            <div id="bmr" class="bmr">
+            <div id="bmr" class="bmrCalculadora">
                 <table>
                     <tr>
                         <th>Actividad</th>
@@ -148,7 +175,7 @@
                 </table>
             </div>
 
-            <div id="mc" class="mc">
+            <div id="mc" class="mcCalculadora">
                 <table>
                     <tr>
                         <th>Actividad</th>

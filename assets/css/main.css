@@ -2,58 +2,342 @@
   overflow: hidden;
   overflow-y: scroll;
   scrollbar-width: none;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
 }
 
 .bodyIndex {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   margin: 0;
-  background-color: beige;
+  background-color: #525558;
 }
 .bodyIndex .headerIndex {
   background-color: #FFA43A;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  width: 338px;
+  border: 1px solid #1b1b1b;
+  border-top: 0;
+  border-bottom: 0;
 }
 .bodyIndex .headerIndex .tituloYLogo {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
-.bodyIndex .headerIndex #alertas {
-  background-color: red;
+.bodyIndex .headerIndex .tituloYLogo h1 {
+  position: absolute;
+  visibility: hidden;
 }
-.bodyIndex .mainIndex {
-  background-color: #525558;
+.bodyIndex .headerIndex .tituloYLogo a {
+  margin: 4% 0% 0% 4%;
 }
-.bodyIndex .mainIndex div {
-  margin: 10px;
-  background-color: white;
+.bodyIndex .headerIndex .tituloYLogo a .imgIcono {
+  height: 75px;
 }
-.bodyIndex .mainIndex .calculadorasIndex {
+.bodyIndex .headerIndex .tituloYLogo .zyzzPose {
+  margin: 4% 4% 0% 0%;
+  height: 75px;
+}
+.bodyIndex .headerIndex .persona {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: 5% 8% 5% 8%;
 }
-.bodyIndex .mainIndex .calculadorasIndex .dobleCalculadoraEspacio {
+.bodyIndex .headerIndex .persona input::placeholder {
+  color: #999999;
+}
+.bodyIndex .headerIndex .persona .fotoPersona {
+  margin: 10% 0% 10% 0%;
   display: flex;
-  flex-direction: row;
-  background-color: #525558;
-  margin: 0;
+  justify-content: space-around;
 }
-.bodyIndex .mainIndex .calculadorasIndex .dobleCalculadoraEspacio div {
-  width: 50%;
+.bodyIndex .headerIndex .persona .fotoPersona img {
+  width: 15rem;
 }
-.bodyIndex .mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo h2 {
-  margin: 0;
-}
-.bodyIndex .mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo div {
+.bodyIndex .headerIndex .persona .nombrePersona {
   display: flex;
-  flex-direction: column;
-  margin: 0;
+  justify-content: center;
+}
+.bodyIndex .headerIndex .persona .nombrePersona input {
+  width: 100%;
+  height: 1rem;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  background-color: #f9f9f9;
+}
+.bodyIndex .headerIndex .persona .datosPersona tr th {
+  font-size: 1.7rem;
+  text-align: start;
+  white-space: nowrap;
+}
+.bodyIndex .headerIndex .persona .datosPersona tr th select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  color: #333;
+  width: 5rem;
+  cursor: pointer;
+}
+.bodyIndex .headerIndex .persona .datosPersona tr th .select-wrapper {
+  position: relative;
+  display: inline-block;
   width: 100%;
 }
-.bodyIndex .footerIndex {
+.bodyIndex .headerIndex .persona .datosPersona tr th input {
+  width: 3rem;
+  height: 1rem;
+  font-size: 1.6rem;
+  text-align: center;
+  white-space: nowrap;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  color: #333;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.bodyIndex .headerIndex .persona .datosPersona tr th input::-webkit-inner-spin-button, .bodyIndex .headerIndex .persona .datosPersona tr th input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.bodyIndex .headerIndex .persona .botonGuardarPersona {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #75C7FF;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.bodyIndex .headerIndex .persona .botonGuardarPersona:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.bodyIndex .headerIndex .persona .botonGuardarPersona:active {
+  background-color: #e2a41e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+
+#alertas {
+  background-color: red;
+}
+
+.mainIndex {
+  background-color: #D3D3D3;
+}
+.mainIndex div {
+  margin: 3% 3% 0% 3%;
+  background-color: white;
+}
+.mainIndex .calculadorasIndex {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1%;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio {
+  display: flex;
+  flex-direction: row;
+  background-color: #D3D3D3;
+  margin: 0;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .cbdc {
+  margin-right: 1.5%;
+  width: 50%;
+  border: 1px solid #1b1b1b;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .cbdc div {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .cbdc div input {
+  width: 3rem;
+  height: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  white-space: nowrap;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .cbdc div input::-webkit-inner-spin-button, .mainIndex .calculadorasIndex .dobleCalculadoraEspacio .cbdc div input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .cbdc div button {
+  margin-top: 10px;
+  height: 38px;
+  width: 80px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #75C7FF;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .cbdc div button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .cbdc div button:active {
+  background-color: #e2a41e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .cbdc table {
+  display: flex;
+  justify-content: center;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .cbdc table tr {
+  white-space: nowrap;
+  font-size: 1rem;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .cbdc table tr th {
+  border: 2px solid #1b1b1b;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo {
+  border: 1px solid #1b1b1b;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5%;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo h2 {
+  margin: 10px 0 0;
+  width: 138px;
+  font-size: 1rem;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo .inputsCalculadoraGrasa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo input {
+  width: 110px;
+  height: 0.6rem;
+  font-size: 1rem;
+  text-align: center;
+  white-space: nowrap;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo input::-webkit-inner-spin-button,
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo .botonYResultado {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 99%;
+  margin: 0 3%;
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo .botonYResultado button {
+  height: 34px;
+  width: 66px;
+  padding: 0;
+  margin-left: 9%;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #75C7FF;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo .botonYResultado button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo .botonYResultado button:active {
+  background-color: #e2a41e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+.mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo .botonYResultado p {
+  height: 2rem;
+  width: 4rem;
+  font-size: 1rem;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0 8% 0 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.mainIndex .ffmiCalculadora {
+  border: 1px solid #1b1b1b;
+}
+.mainIndex .bmrCalculadora {
+  border: 1px solid #1b1b1b;
+}
+.mainIndex .mcCalculadora {
+  border: 1px solid #1b1b1b;
+}
+
+.footerIndex {
   background-color: #75C7FF;
   width: 180px;
+  border: 1px solid #1b1b1b;
+  border-top: 0;
+  border-bottom: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
