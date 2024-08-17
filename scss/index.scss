@@ -3,7 +3,11 @@
     flex-direction: row;
     justify-content: center;
     margin: 0;
-    background-color: #525558;
+    background-image: url(/assets/img/fondoBody.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
 
     .headerIndex {
         background-color: $colorHeader;
@@ -15,12 +19,11 @@
         border-top: 0;
         border-bottom: 0;
 
-
         .tituloYLogo {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-
+            height: 93.52px;
 
             h1 {
 
@@ -50,6 +53,7 @@
             flex-direction: column;
             justify-content: center;
             margin: 5% 8% 5% 8%;
+            height: 700px;
 
             input::placeholder {
                 color: #999999;
@@ -59,9 +63,12 @@
                 margin: 10% 0% 10% 0%;
                 display: flex;
                 justify-content: space-around;
+                overflow: hidden;
+                height: 240px;
 
                 img {
                     width: 15rem;
+                    height: 15rem;
                 }
 
             }
@@ -180,208 +187,176 @@
 
         }
     }
-}
 
-#alertas {
-    background-color: red;
-}
+    .mainIndex {
+        background-color: #D3D3D3;
+        width: 390px;
 
-.mainIndex {
-    background-color: #D3D3D3;
+        div {
+            margin: 3% 3% 0% 3%;
+            background-color: white
+        }
 
-    div {
-        margin: 3% 3% 0% 3%;
-        background-color: white
-    }
-
-    .calculadorasIndex {
-        display: flex;
-        flex-direction: column;
-        margin-top: 1%;
-
-        .dobleCalculadoraEspacio {
+        .calculadorasIndex {
             display: flex;
-            flex-direction: row;
-            background-color: #D3D3D3;
-            margin: 0;
+            flex-direction: column;
+            margin-top: 1%;
 
-            .cbdc {
-
-                margin-right: 1.5%;
-                width: 50%;
-                border: 1px solid #1b1b1b;
-
-                div {
-
-                    width: 95%;
-                    display: flex;
-                    justify-content: space-between;
-
-
-                    input {
-
-                        &::-webkit-inner-spin-button,
-                        &::-webkit-outer-spin-button {
-                            -webkit-appearance: none;
-                            appearance: none;
-                            margin: 0;
-                        }
-
-                        width: 3rem;
-                        height: 1rem;
-                        font-size: 1rem;
-                        text-align: center;
-                        white-space: nowrap;
-                        padding: 10px 15px;
-                        margin: 10px 0;
-                        border: 1px solid #ccc;
-                        border-radius: 4px;
-                        font-size: 1rem;
-                        color: #333;
-                        background-color: #f9f9f9;
-                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                        transition: border-color 0.3s,
-                        box-shadow 0.3s;
-
-                    }
-
-                    button {
-                        margin-top: 10px;
-                        height: 38px;
-                        width: 80px;
-                        padding: 10px 15px;
-                        font-size: 1rem;
-                        color: #fff;
-                        background-color: $colorFooter;
-                        border: 1px solid transparent;
-                        border-radius: 4px;
-                        text-align: center;
-                        line-height: 2px;
-                        text-decoration: none;
-                        cursor: pointer;
-                        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                    }
-
-                    button:hover {
-                        background-color: #0056b3;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                        transform: translateY(-2px);
-                    }
-
-                    button:active {
-                        background-color: #e2a41e;
-                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-                        transform: translateY(0);
-                    }
-
-
-                }
-
-                table {
-                    display: flex;
-                    justify-content: center;
-
-                    tr {
-                        white-space: nowrap;
-                        font-size: 1rem;
-
-                        th {
-                            border: 2px solid #1b1b1b;
-                        }
-                    }
-                }
-            }
-
-            .grasaCoporalMarineMetodo {
-                border: 1px solid #1b1b1b;
+            .dobleCalculadoraEspacio {
                 display: flex;
-                flex-direction: column;
-                margin-left: 1.5%;
-                width: 50%;
-                align-items: center;
-                justify-content: center;
+                flex-direction: row;
+                background-color: #D3D3D3;
+                margin: 0;
 
-                h2 {
-                    margin: 10px 0 0;
-                    width: 138px;
-                    font-size: 1rem;
+                .cbdc {
+
+                    margin-right: 1.5%;
+                    width: 50%;
+                    border: 1px solid #1b1b1b;
+
+                    div {
+
+                        width: 95%;
+                        display: flex;
+                        justify-content: space-between;
+
+                        input {
+
+                            &::-webkit-inner-spin-button,
+                            &::-webkit-outer-spin-button {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                margin: 0;
+                            }
+
+                            width: 3rem;
+                            height: 1rem;
+                            font-size: 1rem;
+                            text-align: center;
+                            white-space: nowrap;
+                            padding: 10px 15px;
+                            margin: 10px 0;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            font-size: 1rem;
+                            color: #333;
+                            background-color: #f9f9f9;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                            transition: border-color 0.3s,
+                            box-shadow 0.3s;
+
+                        }
+
+                        button {
+                            margin-top: 10px;
+                            height: 38px;
+                            width: 80px;
+                            padding: 10px 15px;
+                            font-size: 1rem;
+                            color: #fff;
+                            background-color: $colorFooter;
+                            border: 1px solid transparent;
+                            border-radius: 4px;
+                            text-align: center;
+                            line-height: 2px;
+                            text-decoration: none;
+                            cursor: pointer;
+                            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        }
+
+                        button:hover {
+                            background-color: #0056b3;
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                            transform: translateY(-2px);
+                        }
+
+                        button:active {
+                            background-color: #e2a41e;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                            transform: translateY(0);
+                        }
+
+
+                    }
+
+                    table {
+                        width: 100%;
+                        padding: 0;
+                        margin: 0;
+
+                        tr {
+                            display: flex;
+                            padding: 0;
+                            margin: 0;
+
+                            th {
+
+                                border: 2px solid #000000a6;
+                                width: 50%;
+                                height: 30px;
+                                padding: 0;
+                                margin: 0;
+                                white-space: nowrap;
+                            }
+
+                            .cuadroSlotArriba {
+                                border-left: 0;
+                                border-top: 0;
+                            }
+
+                            .cuadroSlotArribaDerecha {
+                                border-left: 0;
+                                border-top: 0;
+                                border-right: 0;
+                            }
+
+                            .cuadroSlotAbajo {
+                                border-left: 0;
+                                border-top: 0;
+                                border-bottom: 0;
+                            }
+
+                            .cuadroSlotAbajoFinal {
+                                border-right: 0;
+                                border-left: 0;
+                                border-top: 0;
+                                border-bottom: 0;
+                            }
+                        }
+                    }
                 }
 
-                .inputsCalculadoraGrasa {
+                .grasaCoporalMarineMetodo {
+                    border: 1px solid #1b1b1b;
                     display: flex;
                     flex-direction: column;
+                    margin-left: 1.5%;
+                    width: 50%;
                     align-items: center;
-                    width: 100%;
-                }
+                    justify-content: center;
 
-                input {
-                    width: 110px;
-                    height: 0.6rem;
-                    font-size: 1rem;
-                    text-align: center;
-                    white-space: nowrap;
-                    padding: 10px 15px;
-                    margin: 5px 0;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    color: #333;
-                    background-color: #f9f9f9;
-                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                    transition: border-color 0.3s, box-shadow 0.3s;
-                }
-
-                input::-webkit-inner-spin-button,
-                input::-webkit-outer-spin-button {
-                    -webkit-appearance: none;
-                    appearance: none;
-                    margin: 0;
-                }
-
-                .botonYResultado {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    width: 99%;
-                    margin: 0 3%;
-
-                    button {
-                        height: 34px;
-                        width: 66px;
-                        padding: 0;
-                        margin-left: 9%;
+                    h2 {
+                        margin: 10px 0 0;
+                        width: 138px;
                         font-size: 1rem;
-                        color: #fff;
-                        background-color: $colorFooter;
-                        border: 1px solid transparent;
-                        border-radius: 4px;
-                        text-align: center;
-                        text-decoration: none;
-                        cursor: pointer;
-                        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                     }
 
-
-                    button:hover {
-                        background-color: #0056b3;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                        transform: translateY(-2px);
+                    .inputsCalculadoraGrasa {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 100%;
                     }
 
-                    button:active {
-                        background-color: #e2a41e;
-                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-                        transform: translateY(0);
-                    }
-
-                    p {
-                        height: 2rem;
-                        width: 4rem;
+                    input {
+                        width: 110px;
+                        height: 0.6rem;
                         font-size: 1rem;
                         text-align: center;
                         white-space: nowrap;
-                        margin: 0 8% 0 0;
+                        padding: 10px 15px;
+                        margin: 5px 0;
                         border: 1px solid #ccc;
                         border-radius: 4px;
                         color: #333;
@@ -390,43 +365,308 @@
                         transition: border-color 0.3s, box-shadow 0.3s;
                     }
 
+                    input::-webkit-inner-spin-button,
+                    input::-webkit-outer-spin-button {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        margin: 0;
+                    }
+
+                    .botonYResultado {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 99%;
+                        margin: 0 3%;
+
+                        button {
+                            height: 34px;
+                            width: 66px;
+                            padding: 0;
+                            margin-left: 9%;
+                            font-size: 1rem;
+                            color: #fff;
+                            background-color: $colorFooter;
+                            border: 1px solid transparent;
+                            border-radius: 4px;
+                            text-align: center;
+                            text-decoration: none;
+                            cursor: pointer;
+                            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        }
+
+
+                        button:hover {
+                            background-color: #0056b3;
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                            transform: translateY(-2px);
+                        }
+
+                        button:active {
+                            background-color: #e2a41e;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                            transform: translateY(0);
+                        }
+
+                        p {
+                            height: 2rem;
+                            width: 4rem;
+                            font-size: 1rem;
+                            text-align: center;
+                            white-space: nowrap;
+                            margin: 0 8% 0 0;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            color: #333;
+                            background-color: #f9f9f9;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                            transition: border-color 0.3s, box-shadow 0.3s;
+                        }
+
+                    }
+
                 }
 
             }
 
+            .ffmiCalculadora {
+                display: flex;
+                flex-direction: row;
+                border: 1px solid #000000a6;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    p {
+                        white-space: nowrap;
+                        text-align: center;
+                        margin: 7px 10px 10px 10px;
+                    }
+
+                    .ffmiHTML {
+                        margin-top: 0;
+                    }
+                }
+
+                .barraProgresoFFMI {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+
+                    p {
+                        margin: 5px 0
+                    }
+
+                    progress {
+                        width: 160px;
+                        height: 15px;
+                        background-color: #ff0000;
+                        text-align: center;
+                        color: rgb(0, 183, 255);
+                        font-weight: bold;
+                        line-height: 30px;
+                        transition: width 0.4s ease;
+                    }
+
+                }
+
+            }
+
+            .bmrCalculadora {
+
+                border: 1px solid #000000a6;
+                padding: 0;
+
+                table {
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+
+                    tr {
+                        display: flex;
+                        padding: 0;
+                        margin: 0;
+
+                        th {
+
+                            border: 2px solid #000000a6;
+                            width: 50%;
+                            height: 30px;
+                            padding: 0;
+                            margin: 0;
+                        }
+
+                        .cuadroSlotArriba {
+                            border-left: 0;
+                            border-top: 0;
+                        }
+
+                        .cuadroSlotArribaDerecha {
+                            border-left: 0;
+                            border-top: 0;
+                            border-right: 0;
+                        }
+
+                        .cuadroSlotAbajo {
+                            border-left: 0;
+                            border-top: 0;
+                            border-bottom: 0;
+                        }
+
+                        .cuadroSlotAbajoFinal {
+                            border-right: 0;
+                            border-left: 0;
+                            border-top: 0;
+                            border-bottom: 0;
+                        }
+                    }
+                }
+
+
+            }
+
+            .mcCalculadora {
+
+                border: 1px solid #000000a6;
+                padding: 0;
+                font-size: 0.8rem;
+
+                table {
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+
+                    tr {
+                        display: flex;
+                        padding: 0;
+                        margin: 0;
+
+                        th {
+
+                            border: 2px solid #000000a6;
+                            width: 50%;
+                            height: 30px;
+                            padding: 0;
+                            margin: 0;
+                        }
+
+                        .ffmiCuadroSlotArriba {
+                            border-left: 0;
+                            border-top: 0;
+                        }
+
+                        .ffmiCuadroSlotArribaDerecha {
+                            border-left: 0;
+                            border-top: 0;
+                            border-right: 0;
+                        }
+
+                        .ffmiSlotAbajo {
+                            border-left: 0;
+                            border-top: 0;
+                            border-bottom: 0;
+                        }
+
+                        .ffmiSlotAbajoFinal {
+                            border-right: 0;
+                            border-left: 0;
+                            border-top: 0;
+                            border-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+
         }
+
     }
 
-    .ffmiCalculadora {
-
+    .footerIndex {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        background-color: $colorFooter;
+        width: 220px;
         border: 1px solid #1b1b1b;
+        border-top: 0;
+        border-bottom: 0;
+        height: 100vh;
+
+
+
+        div {
+            display: flex;
+            justify-content: center;
+
+            width: 100%;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+
+                justify-content: center;
+                margin: 20px;
+
+                .botonSeleccionarPersona {
+                    height: 33px;
+                    width: 9rem;
+                    margin-bottom: 1rem;
+                    white-space: nowrap;
+                    display: inline-block;
+                    padding: 10px 20px;
+                    font-size: 1rem;
+                    color: #fff;
+                    background-color: $colorHeader;
+                    border: 2px solid transparent;
+                    border-radius: 4px;
+                    text-align: center;
+                    line-height: 2px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+                }
+            }
+
+
+            button {
+
+                height: 33px;
+                width: 9rem;
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 1rem;
+                color: #fff;
+                background-color: $colorHeader;
+                border: 2px solid transparent;
+                border-radius: 4px;
+                text-align: center;
+                line-height: 2px;
+                text-decoration: none;
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            }
+
+            button:hover {
+                background-color: #0056b3;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                transform: translateY(-2px);
+            }
+
+            button:active {
+                background-color: #02a5d6;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                transform: translateY(0);
+            }
+        }
+
 
 
 
     }
-
-    .bmrCalculadora {
-        
-        border: 1px solid #1b1b1b;
-
-
-    }
-
-    .mcCalculadora {
-
-        border: 1px solid #1b1b1b;
-
-
-    }
-
-
-}
-
-.footerIndex {
-    background-color: $colorFooter;
-    width: 180px;
-    border: 1px solid #1b1b1b;
-    border-top: 0;
-    border-bottom: 0;
-
 }

@@ -13,7 +13,8 @@
     <!-- link css-->
     <link rel="stylesheet" href="./assets/css/main.css">
     <!-- javaScript -->
-    <!-- <script defer src="assets/js/scripts.js"></script> -->
+    <script defer src="assets/js/indexScripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="bodyIndex">
@@ -75,7 +76,8 @@
                 </tr>
 
             </table>
-            <button class="botonGuardarPersona" id="botonEditarPersona">Guardar Persona</button>
+            <button class="botonGuardarPersona" id="botonGuardarPersona">Guardar Persona</button>
+            <button class="ayudaIndex" id="botonAyuda">Ayuda</button>
             <div id="alertas">
 
             </div>
@@ -94,24 +96,24 @@
                     </div>
                     <table id="cbdcTable">
                         <tr>
-                            <th>Intensidad</th>
-                            <th>Gasto Cal.</th>
+                            <th class="cuadroSlotArriba">Intensidad</th>
+                            <th class="cuadroSlotArribaDerecha">Gasto Cal.</th>
                         </tr>
                         <tr>
-                            <th>70-110PPM</th>
-                            <th></th>
+                            <th class="cuadroSlotArriba">70-110PPM</th>
+                            <th class="cuadroSlotArribaDerecha"></th>
                         </tr>
                         <tr>
-                            <th>90-130PPM</th>
-                            <th></th>
+                            <th class="cuadroSlotArriba">90-130PPM</th>
+                            <th class="cuadroSlotArribaDerecha"></th>
                         </tr>
                         <tr>
-                            <th>130-160PPM</th>
-                            <th></th>
+                            <th class="cuadroSlotArriba">130-160PPM</th>
+                            <th class="cuadroSlotArribaDerecha"></th>
                         </tr>
                         <tr>
-                            <th>160-200PPM</th>
-                            <th></th>
+                            <th class="cuadroSlotAbajo">160-200PPM</th>
+                            <th class="cuadroSlotAbajoFinal"></th>
                         </tr>
                     </table>
 
@@ -136,12 +138,24 @@
 
             <div id="ffmi" class="ffmiCalculadora">
 
-                <p>Calculadora FFMI</p>
+                <div>
+
+                    <p>Calculadora FFMI</p>
+
+                    <p class="ffmiHTML" id="ffmiResultado">0</p>
+
+                </div>
+
+
+
                 <div class="barraProgresoFFMI">
+
                     <p class="textoIndicativoBarra">
                         18| 19| 21| 23| 25| 29| +29|
                     </p>
+
                     <progress id="barraProgresoffmi" value="0" max="100"></progress>
+
                 </div>
 
             </div>
@@ -149,28 +163,28 @@
             <div id="bmr" class="bmrCalculadora">
                 <table>
                     <tr>
-                        <th>Actividad</th>
-                        <th>Indice metabolico basal</th>
+                        <th class="cuadroSlotArriba">Actividad</th>
+                        <th class="cuadroSlotArribaDerecha">Indice metabolico basal</th>
                     </tr>
                     <tr>
-                        <th>0 Dias</th>
-                        <th></th>
+                        <th class="cuadroSlotArriba">0 Dias</th>
+                        <th class="cuadroSlotArribaDerecha"></th>
                     </tr>
                     <tr>
-                        <th>1-3 Dias</th>
-                        <th></th>
+                        <th class="cuadroSlotArriba">1-3 Dias</th>
+                        <th class="cuadroSlotArribaDerecha"></th>
                     </tr>
                     <tr>
-                        <th>3-5 Dias</th>
-                        <th></th>
+                        <th class="cuadroSlotArriba">3-5 Dias</th>
+                        <th class="cuadroSlotArribaDerecha"></th>
                     </tr>
                     <tr>
-                        <th>7 Dias</th>
-                        <th></th>
+                        <th class="cuadroSlotArriba">7 Dias</th>
+                        <th class="cuadroSlotArribaDerecha"></th>
                     </tr>
                     <tr>
-                        <th>Rutina Doble</th>
-                        <th></th>
+                        <th class="cuadroSlotAbajo">Rutina Doble</th>
+                        <th class="cuadroSlotAbajoFinal"></th>
                     </tr>
                 </table>
             </div>
@@ -178,52 +192,52 @@
             <div id="mc" class="mcCalculadora">
                 <table>
                     <tr>
-                        <th>Actividad</th>
-                        <th>Proteinas</th>
-                        <th>Hidratos</th>
-                        <th>Grasas</th>
-                        <th>Azucar</th>
-                        <th>Grasas sat</th>
+                        <th class="ffmiCuadroSlotArriba">Actividad</th>
+                        <th class="ffmiCuadroSlotArriba">Proteinas</th>
+                        <th class="ffmiCuadroSlotArriba">Hidratos</th>
+                        <th class="ffmiCuadroSlotArriba">Grasas</th>
+                        <th class="ffmiCuadroSlotArriba">Azucar</th>
+                        <th class="ffmiCuadroSlotArribaDerecha">Saturada</th>
                     </tr>
                     <tr>
-                        <th>0 Dias</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th class="ffmiCuadroSlotArriba">0 Dias</th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArribaDerecha"></th>
                     </tr>
                     <tr>
-                        <th>1-3 Dias</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th class="ffmiCuadroSlotArriba">1-3 Dias</th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArribaDerecha"></th>
                     </tr>
                     <tr>
-                        <th>3-5 Dias</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th class="ffmiCuadroSlotArriba">3-5 Dias</th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArribaDerecha"></th>
                     </tr>
                     <tr>
-                        <th>7 Dias</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th class="ffmiCuadroSlotArriba">7 Dias</th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArriba"></th>
+                        <th class="ffmiCuadroSlotArribaDerecha"></th>
                     </tr>
                     <tr>
-                        <th>Rutina Doble</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th class="ffmiSlotAbajo">Rutina X2</th>
+                        <th class="ffmiSlotAbajo"></th>
+                        <th class="ffmiSlotAbajo"></th>
+                        <th class="ffmiSlotAbajo"></th>
+                        <th class="ffmiSlotAbajo"></th>
+                        <th class="ffmiSlotAbajoFinal"></th>
                     </tr>
                 </table>
             </div>
@@ -231,10 +245,33 @@
     </main>
     <footer class="footerIndex">
 
-        <ul id="personasLista">
+        <div>
 
-        </ul>
-        <button id="botonCrearPersona">Añadir Persona</button>
+            <ul id="personasLista">
+
+            </ul>
+
+        </div>
+
+        <div>
+
+            <button class="listaOpcion" id="botonCrearPersona">Añadir Persona</button>
+
+        </div>
+
+        <div>
+
+            <button class="listaOpcion" id="botonEliminarPersona">Eliminar Persona</button>
+
+        </div>
+
+        <div class="tiendaEnlace">
+
+            <a href="pages/tienda.html">
+                <img src="assets/img/gymbroStoreIcono.png" alt="imagen enlace a tienda">
+            </a>
+
+        </div>
 
     </footer>
 </body>
