@@ -936,7 +936,7 @@ async function ayuda() {
 
     await Swal.fire({
         position: "bottom-end",
-        imageUrl: "../assets/img/siLeSeAlDeHechoMeme.png",
+        imageUrl: "assets/img/siLeSeAlDeHechoMeme.png",
         title: "Evaluación muscular, detección de anomalías y muchos usos más...",
         text: "El FFMI (Índice de Masa Libre de Grasa) mide la cantidad de masa muscular en relación con la altura, excluyendo la grasa corporal. Un FFMI entre 18 y 22 es normal y saludable. Valores superiores a 22 pueden indicar alta masa muscular, valores muy altos son señales de uso de esteroides. Un FFMI por debajo de 17 puede ser bajo y señalar insuficiencia muscular, desnutrición, o problemas de salud, lo que aconseja consultar a un profesional.",
         confirmButtonText: 'OK',
@@ -956,7 +956,7 @@ async function ayuda() {
 
     await Swal.fire({
         position: "bottom-end",
-        imageUrl: "../assets/img/realmente.jpg",
+        imageUrl: "assets/img/realmente.jpg",
         title: "La base de la alimentación y la planificación de cualquier objetivo...",
         text: "El BRM es la cantidad de energía que el cuerpo necesita para mantener funciones básicas en reposo, como la respiración, la circulación sanguínea y la regulación de la temperatura corporal. Se mide en calorías y representa la energía mínima necesaria para sobrevivir cuando el cuerpo está en reposo total.",
         confirmButtonText: 'OK',
@@ -976,7 +976,7 @@ async function ayuda() {
 
     await Swal.fire({
         position: "bottom-end",
-        imageUrl: "../assets/img/estadisticamente.jpg",
+        imageUrl: "assets/img/estadisticamente.jpg",
         title: "Una guia basica de por donde empezar a la hora de mejorar la alimentacion...",
         text: "Un macro calculator calcula la cantidad ideal de proteínas, carbohidratos y grasas según tus datos personales y objetivos. Introduces información como tu peso, altura y actividad, y el cálculo te da un desglose de calorías y macronutrientes para ayudarte a planificar tu dieta.",
         confirmButtonText: 'OK',
