@@ -6,6 +6,163 @@
   font-optical-sizing: auto;
 }
 
+.tiendaInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+.tiendaInfo h2 {
+  font-size: 1rem;
+}
+.tiendaInfo p {
+  font-size: 14px;
+  margin: 10px 10px 10px 10px;
+}
+.tiendaInfo .dudas {
+  margin-top: 30px;
+}
+
+.mainTienda {
+  background-color: #D3D3D3;
+  width: 390px;
+}
+.mainTienda .tiendaContenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mainTienda .tiendaContenedor .producto {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #c573da;
+  margin: 16px 8px 16px 8px;
+  height: 8rem;
+  width: 22rem;
+}
+.mainTienda .tiendaContenedor .producto img {
+  height: 8rem;
+  width: 8rem;
+  object-fit: cover;
+  overflow: hidden;
+  /* margin-left: -2rem; */
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 15%, rgb(0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10%, rgb(0, 0, 0) 100%);
+}
+.mainTienda .tiendaContenedor .producto .infoProducto h2 {
+  margin: 4px 0px 0px 16px;
+  font-size: 1rem;
+  width: 200px;
+}
+.mainTienda .tiendaContenedor .producto .infoProducto p {
+  margin: 4px 0px 0px 16px;
+  width: 200px;
+  font-size: 14px;
+}
+.mainTienda .tiendaContenedor .producto .precioYSeleccionado {
+  display: none;
+}
+.mainTienda .tiendaContenedor .botonCompra {
+  display: inline-block;
+  margin-left: 1px;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #FFA43A;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.mainTienda .tiendaContenedor .botonCompra:hover {
+  background-color: #33ff00;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.mainTienda .tiendaContenedor .botonCompra:active {
+  background-color: #e2a41e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+.mainTienda .producto:hover .infoProducto {
+  display: none;
+}
+.mainTienda .producto:hover .precioYSeleccionado {
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+  margin-bottom: 37px;
+}
+.mainTienda .producto:hover .precioYSeleccionado h3 {
+  font-size: 1.3rem;
+  margin: 20px 0 8px;
+}
+.mainTienda .producto:hover .precioYSeleccionado #paqueteSeleccionado {
+  display: inline-block;
+  padding: 7px 5px;
+  margin-left: 1px;
+  font-size: 11px;
+  color: #fff;
+  background-color: #75C7FF;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.mainTienda .producto:hover .precioYSeleccionado #paqueteSeleccionado:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.mainTienda .producto:hover .precioYSeleccionado #paqueteSeleccionado:active {
+  background-color: #e2a41e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+
+.carritoYCompra {
+  display: none;
+}
+
+.footerTienda {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: #75C7FF;
+  width: 220px;
+  border: 1px solid #1b1b1b;
+  border-top: 0;
+  border-bottom: 0;
+  height: 100vh;
+}
+.footerTienda div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.footerTienda div a {
+  margin: 2rem;
+}
+.footerTienda div a img {
+  height: 4rem;
+  width: 4rem;
+}
+.footerTienda div a .calculadorasEnlace {
+  height: 9rem;
+  width: 7rem;
+}
+
+.swalNoTransition {
+  transition: none !important;
+}
+
 .bodyIndex {
   display: flex;
   flex-direction: row;
@@ -37,27 +194,27 @@
   visibility: hidden;
 }
 .bodyIndex .headerIndex .tituloYLogo a {
-  margin: 4% 0% 0% 4%;
+  margin: 2% 0% 0% 4%;
 }
 .bodyIndex .headerIndex .tituloYLogo a .imgIcono {
   height: 75px;
 }
 .bodyIndex .headerIndex .tituloYLogo .zyzzPose {
-  margin: 4% 4% 0% 0%;
+  margin: 2% 4% 0% 0%;
   height: 75px;
 }
 .bodyIndex .headerIndex .persona {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 5% 8% 5% 8%;
+  margin: 1rem 2rem 1rem 2rem;
   height: 700px;
 }
 .bodyIndex .headerIndex .persona input::placeholder {
   color: #999999;
 }
 .bodyIndex .headerIndex .persona .fotoPersona {
-  margin: 10% 0% 10% 0%;
+  margin: 5% 0% 5% 0%;
   display: flex;
   justify-content: space-around;
   overflow: hidden;
@@ -150,12 +307,36 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(0);
 }
+.bodyIndex .headerIndex .persona .ayudaIndex {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #75C7FF;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.bodyIndex .headerIndex .persona .ayudaIndex:hover {
+  background-color: #24b300;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.bodyIndex .headerIndex .persona .ayudaIndex:active {
+  background-color: #e2a41e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
 .bodyIndex .mainIndex {
   background-color: #D3D3D3;
   width: 390px;
 }
 .bodyIndex .mainIndex div {
-  margin: 3% 3% 0% 3%;
+  margin: 4% 5% 0% 3%;
   background-color: white;
 }
 .bodyIndex .mainIndex .calculadorasIndex {
@@ -311,7 +492,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 99%;
-  margin: 0 3%;
+  margin: 0 4px 0 0;
 }
 .bodyIndex .mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo .botonYResultado button {
   height: 34px;
@@ -382,7 +563,7 @@
 .bodyIndex .mainIndex .calculadorasIndex .ffmiCalculadora .barraProgresoFFMI progress {
   width: 160px;
   height: 15px;
-  background-color: #ff0000;
+  background-color: #000000;
   text-align: center;
   color: rgb(0, 183, 255);
   font-weight: bold;
@@ -514,6 +695,11 @@
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
+.bodyIndex .footerIndex div ul .personaSeleccionada {
+  background-color: #0056b3;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
 .bodyIndex .footerIndex div button {
   height: 33px;
   width: 9rem;
@@ -539,6 +725,24 @@
   background-color: #02a5d6;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(0);
+}
+.bodyIndex .footerIndex div .listaOpcionCrearPersona:hover {
+  background-color: #24b300;
+}
+.bodyIndex .footerIndex div .listaOpcionBorrar {
+  margin: 1rem 0 2rem 0;
+}
+.bodyIndex .footerIndex div .listaOpcionBorrar:hover {
+  background-color: #ff0000;
+}
+.bodyIndex .footerIndex .tiendaPlace a {
+  border-radius: 50%;
+}
+.bodyIndex .footerIndex .tiendaPlace img {
+  margin-left: 4px;
+  height: 10rem;
+  width: 10rem;
+  overflow: visible;
 }
 
 /*# sourceMappingURL=main.css.map */

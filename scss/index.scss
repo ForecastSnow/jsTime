@@ -1,3 +1,8 @@
+.swalNoTransition {
+    transition: none !important;
+}
+
+
 .bodyIndex {
     display: flex;
     flex-direction: row;
@@ -33,7 +38,7 @@
             }
 
             a {
-                margin: 4% 0% 0% 4%;
+                margin: 2% 0% 0% 4%;
 
                 .imgIcono {
                     height: 75px;
@@ -41,7 +46,7 @@
             }
 
             .zyzzPose {
-                margin: 4% 4% 0% 0%;
+                margin: 2% 4% 0% 0%;
                 height: 75px;
             }
 
@@ -52,7 +57,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin: 5% 8% 5% 8%;
+            margin: 1rem 2rem 1rem 2rem;
             height: 700px;
 
             input::placeholder {
@@ -60,11 +65,12 @@
             }
 
             .fotoPersona {
-                margin: 10% 0% 10% 0%;
+                margin: 5% 0% 5% 0%;
                 display: flex;
                 justify-content: space-around;
                 overflow: hidden;
                 height: 240px;
+
 
                 img {
                     width: 15rem;
@@ -185,6 +191,33 @@
                 transform: translateY(0);
             }
 
+            .ayudaIndex {
+                margin-top: 1rem;
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 16px;
+                color: #fff;
+                background-color: $colorFooter;
+                border: 2px solid transparent;
+                border-radius: 4px;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            }
+
+            .ayudaIndex:hover {
+                background-color: #24b300;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                transform: translateY(-2px);
+            }
+
+            .ayudaIndex:active {
+                background-color: #e2a41e;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                transform: translateY(0);
+            }
+
         }
     }
 
@@ -193,7 +226,7 @@
         width: 390px;
 
         div {
-            margin: 3% 3% 0% 3%;
+            margin: 4% 5% 0% 3%;
             background-color: white
         }
 
@@ -377,7 +410,7 @@
                         flex-direction: row;
                         justify-content: space-between;
                         width: 99%;
-                        margin: 0 3%;
+                        margin: 0 4px 0 0;
 
                         button {
                             height: 34px;
@@ -435,6 +468,7 @@
                 flex-direction: row;
                 border: 1px solid #000000a6;
 
+
                 div {
                     display: flex;
                     flex-direction: column;
@@ -463,7 +497,7 @@
                     progress {
                         width: 160px;
                         height: 15px;
-                        background-color: #ff0000;
+                        background-color: #000000;
                         text-align: center;
                         color: rgb(0, 183, 255);
                         font-weight: bold;
@@ -631,6 +665,12 @@
                     cursor: pointer;
                     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
                 }
+
+                .personaSeleccionada {
+                    background-color: #0056b3;
+                    margin-bottom: 1rem;
+                    white-space: nowrap;
+                }
             }
 
 
@@ -663,9 +703,32 @@
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
                 transform: translateY(0);
             }
+
+            .listaOpcionCrearPersona:hover {
+                background-color: #24b300;
+            }
+
+            .listaOpcionBorrar {
+                margin: 1rem 0 2rem 0;
+            }
+
+            .listaOpcionBorrar:hover {
+                background-color: #ff0000;
+            }
         }
 
+        .tiendaPlace {
+            a {
+                border-radius: 50%;
+            }
 
+            img {
+                margin-left: 4px;
+                height: 10rem;
+                width: 10rem;
+                overflow: visible;
+            }
+        }
 
 
     }

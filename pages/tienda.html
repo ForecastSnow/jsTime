@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <!-- link css-->
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
     <!-- javaScript -->
     <script defer src="../assets/js/tiendaScripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -25,13 +25,23 @@
 
             <h1 class="titulo">Gymbro store</h1>
 
-            <a href="../index.html" class="imgIcono" src="../assets/img/icono.png" alt="icono Gymbro"></a>
+            <a href="../index.html"><img class="imgIcono" src="../assets/img/icono.png" alt="icono Gymbro"></a>
 
             <img class="zyzzPose" src="../assets/img/zyssPose.webp" alt="foto pose zyzz">
 
         </div>
 
-        <div class="tiendaInfo" id="">
+        <div class="tiendaInfo">
+            <h2>¿Cómo Funciona Nuestro Asesoramiento Fitness?
+
+            </h2>
+            <p>1. Elige Tu Paquete: Selecciona el programa que mejor se adapte a tus objetivos.</p>
+            <p>2. Contacto Inicial: Confirmamos tu información por correo o teléfono.</p>
+            <p>3. Plan Personalizado: Creamos un plan de alimentación y entrenamiento según tus necesidades.</p>
+            <p>4. 60 Días de Asesoramiento: Accede a soporte continuo y ajustes en tu plan.</p>
+            <p>5. Soporte Continuo: Contáctanos para resolver dudas y recibir orientación.</p>
+            <p>6. Evaluación Final: Revisamos tus resultados y ofrecemos recomendaciones futuras.</p>
+            <p class="dudas"><b>¿Dudas? comuníquese por las redes sociales.</b></p>
 
         </div>
 
@@ -43,9 +53,27 @@
 
 
             <div class="producto">
+
+                <img src="../assets/img/platoSaludable.jpeg" alt="">
+                <div class="infoProducto">
+                    <h2>Bajar de peso es vivir mejor</h2>
+                    <p>Bajar de peso es vivir mejor porque te da más energía, mejora tu salud y eleva tu autoestima. Es
+                        una inversión en tu bienestar general.</p>
+                </div>
+
+                <div class="precioYSeleccionado">
+                    <h3 id="precio">Precio: 30000</h3>
+                    <button id="paqueteSeleccionado">añadir paquete</button>
+                </div>
+            </div>
+
+            <div class="producto">
+                <div>
+
+                </div>
                 <img src="" alt="">
                 <div class="infoProducto">
-                    <h2></h2>
+                    <h2>Vivir mejor es mantenerse en forma</h2>
                     <p></p>
                 </div>
             </div>
@@ -53,19 +81,38 @@
             <div class="producto">
                 <img src="" alt="">
                 <div class="infoProducto">
-                    <h2></h2>
+                    <h2>Ganar masa muscular es vivir a largo plazo</h2>
                     <p></p>
                 </div>
             </div>
-            
-            <div class="producto">
-                <img src="" alt="">
-                <div class="infoProducto">
-                    <h2></h2>
-                    <p></p>
-                </div>
+
+            <div>
+                <button class="botonCompra" id="comprar">Carrito</button>
             </div>
-            
+
+            <div class="carritoYCompra">
+
+                <h3>Verifica tus productos</h3>
+                <ul id="productosSeleccionados">
+
+                </ul>
+                <form action="/procesar-compra" method="post">
+
+
+                    <label for="numeroDeTarjeta">Número de Tarjeta:</label>
+                    <input type="number" name="numeroDeTarjeta" placeholder="1234 5678 9012 3456"
+                        maxlength="19" pattern="\d{4} \d{4} \d{4} \d{4}" required>
+
+                    <label for="vencimientoTarjeta">Fecha de Expiración:</label>
+                    <input type="month" name="vencimientoTarjeta" required>
+
+                    <label for="cvv">Código de Seguridad (CVV):</label>
+                    <input type="text" id="cvv" placeholder="123" maxlength="3" pattern="\d{3}" required>
+
+                    <button type="submit">Comprar</button>
+                </form>
+
+            </div>
 
         </section>
 
@@ -75,21 +122,21 @@
 
         <div>
 
-            <ul id="personasLista">
+            <a href="https://www.instagram.com/" target="_blank"> <img src="../assets/img/instagram.png"
+                    alt="instagram icono"> </a>
 
-            </ul>
+            <a href="https://www.facebook.com" target="_blank"> <img src="../assets/img/facebook.png"
+                    alt="facebook icono"> </a>
+
+            <a href="https://www.tiktok.com" target="_blank"> <img src="../assets/img/tiktok.png" alt="tiktok icono">
+            </a>
+
 
         </div>
-
         <div>
 
-            <button class="listaOpcion" id="botonCrearPersona">Añadir Persona</button>
-
-        </div>
-
-        <div>
-
-            <button class="listaOpcion" id="botonEliminarPersona">Eliminar Persona</button>
+            <a href="../index.html"> <img class="calculadorasEnlace" src="../assets/img/calculadoraIcono.png"
+                    alt="echoALosChapazos"> </a>
 
         </div>
 

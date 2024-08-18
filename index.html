@@ -12,33 +12,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <!-- link css-->
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- javaScript -->
     <script defer src="assets/js/indexScripts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </script>
+
 </head>
 
 <body class="bodyIndex">
     <header class="headerIndex">
-        <div class="tituloYLogo">
-            <h1 class="titulo">Gymbro Calculator</h1>
-            <a href="./index.html"><img class="imgIcono" src="./assets/img/icono.png" alt="icono Gymbro"></a>
-            <img class="zyzzPose" src="./assets/img/zyssPose.webp" alt="foto pose zyzz">
-        </div>
 
+        <div class="tituloYLogo">
+
+            <h1 class="titulo">Gymbro Calculator</h1>
+
+            <a href="./index.html"><img class="imgIcono" src="./assets/img/icono.png" alt="icono Gymbro"></a>
+
+            <img class="zyzzPose" src="./assets/img/zyssPose.webp" alt="foto pose zyzz">
+
+        </div>
 
         <div class="persona">
 
             <div class="fotoPersona">
 
-                <img src="./assets/img/elBotasMamao.jpg" alt="fotito alta facha ">
+                <img id="fotoEstado" src="./assets/img/DefaultFoto.png" alt="fotito alta facha ">
 
             </div>
-
 
             <div class="nombrePersona">
                 <input id="nombrePersona" type="text" placeholder="Nombre">
             </div>
-
 
             <table class="datosPersona" id="datosPersona">
 
@@ -76,20 +81,25 @@
                 </tr>
 
             </table>
+
             <button class="botonGuardarPersona" id="botonGuardarPersona">Guardar Persona</button>
+
             <button class="ayudaIndex" id="botonAyuda">Ayuda</button>
+
             <div id="alertas">
 
             </div>
         </div>
+
     </header>
+
     <main class="mainIndex">
 
         <section class="calculadorasIndex">
 
             <div class="dobleCalculadoraEspacio">
 
-                <div class="cbdc">
+                <div class="cbdc" id="contadorDeCaloriasQuemadas">
                     <div>
                         <input id="minutos" type="text" placeholder="Minutos">
                         <button id="calcularCDBC">calcular</button>
@@ -119,7 +129,7 @@
 
                 </div>
 
-                <div class="grasaCoporalMarineMetodo">
+                <div class="grasaCoporalMarineMetodo" id="calculadoraDeGrasa">
                     <h2>Calculadora de grasa</h2>
                     <div id="calculadoraGrasa" class="inputsCalculadoraGrasa">
                         <input id="cintura" type="number" placeholder="Circ. Cintura (CM)">
@@ -130,9 +140,6 @@
                         <button id="calcularGrasa">Calcular</button>
                         <p id="resultadoGrasa">0%</p>
                     </div>
-
-
-
                 </div>
             </div>
 
@@ -241,8 +248,11 @@
                     </tr>
                 </table>
             </div>
+
         </section>
+
     </main>
+
     <footer class="footerIndex">
 
         <div>
@@ -255,20 +265,22 @@
 
         <div>
 
-            <button class="listaOpcion" id="botonCrearPersona">Añadir Persona</button>
+            <button class="listaOpcionCrearPersona" id="botonCrearPersona">Añadir Persona</button>
 
         </div>
 
         <div>
 
-            <button class="listaOpcion" id="botonEliminarPersona">Eliminar Persona</button>
+            <button class="listaOpcionBorrar" id="botonEliminarPersona">Eliminar Persona</button>
 
         </div>
 
-        <div class="tiendaEnlace">
+        <div class="tiendaPlace">
 
             <a href="pages/tienda.html">
-                <img src="assets/img/gymbroStoreIcono.png" alt="imagen enlace a tienda">
+
+                <img id="tienda" src="assets/img/gymbroStoreIcono.png" alt="imagen enlace a tienda">
+                
             </a>
 
         </div>

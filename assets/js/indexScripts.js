@@ -9,7 +9,6 @@ class Persona {
         this.peso = peso;
         this.genero = genero;
         this.grasaCorporal = grasaCorporal;
-        this.fotoEstado = 0;
 
     }
 
@@ -22,17 +21,13 @@ class Persona {
         this.grasaCorporal = grasaCorporal;
     }
 
-    actualizarFotoEstado(fotoEstado) {
-        this.fotoEstado = fotoEstado
-    }
-
     actualizarId(id) {
         this.id = id
     }
 
 }
 
-let idSeleccionado;
+
 
 let arrayPersonas = localStorage.getItem("personas");
 
@@ -45,6 +40,8 @@ function filtrarArrays(array1, array2) {
 
     return Array.from(map.values());
 }
+
+/* el localYFetch basicamente mezcla el localStorage y fetch data.json. */
 
 const localYFetch = async function () {
 
@@ -76,16 +73,19 @@ const localYFetch = async function () {
 
 localYFetch();
 
+let idSeleccionado;
 
 /* calcula el puntaje del FFMI y actualiza la foto estado y hace los cambios en el html */
 
 const calcularFFMI = function () {
 
+    let resultado;
+
     if (arrayPersonas[idSeleccionado].grasaCorporal > 1) {
 
         let alturaEnMetros = arrayPersonas[idSeleccionado].altura / 100;
         let masaMagra = arrayPersonas[idSeleccionado].peso - (arrayPersonas[idSeleccionado].peso * (arrayPersonas[idSeleccionado].grasaCorporal / 100));
-        let resultado = ((masaMagra / (alturaEnMetros * alturaEnMetros)) + 6.1 * (1.8 - alturaEnMetros)).toFixed(2);
+        resultado = ((masaMagra / (alturaEnMetros * alturaEnMetros)) + 6.1 * (1.8 - alturaEnMetros)).toFixed(2);
 
         document.getElementById("ffmi").innerHTML = `
 
@@ -141,7 +141,55 @@ const calcularFFMI = function () {
 
         const progressBar = document.getElementById('barraProgresoffmi');
         progressBar.value = Math.min(Math.max(0, 0), 100);
+
+
     }
+
+    let fotoEstado = document.getElementById("fotoEstado");
+
+    resultado = parseInt(resultado);
+
+    if (arrayPersonas[idSeleccionado].genero == 0) {
+        if (arrayPersonas[idSeleccionado].peso > arrayPersonas[idSeleccionado].altura - 100) {
+
+            if (resultado <= 17) {
+                fotoEstado.setAttribute("src", "./assets/img/margeGorda.png");
+            } else if (resultado > 17 && resultado < 20) {
+                fotoEstado.setAttribute("src", "./assets/img/margeNormal.png");
+            } else if (resultado >= 20 && resultado <= 23) {
+                fotoEstado.setAttribute("src", "./assets/img/margeMamada.png");
+            } else if (resultado > 23) {
+                fotoEstado.setAttribute("src", "./assets/img/margeConEsteroides.png");
+            }
+        } else {
+            if (resultado <= 17) {
+                fotoEstado.setAttribute("src", "./assets/img/margeDesnutrida.png");
+            } else if (resultado > 17) {
+                fotoEstado.setAttribute("src", "./assets/img/margeNormal.png");
+            }
+        }
+    } else {
+        if (arrayPersonas[idSeleccionado].peso > arrayPersonas[idSeleccionado].altura - 100) {
+
+            if (resultado <= 17) {
+                fotoEstado.setAttribute("src", "./assets/img/homeroGordo.png");
+            } else if (resultado > 17 && resultado < 20) {
+                fotoEstado.setAttribute("src", "./assets/img/homeroNormal.png");
+            } else if (resultado >= 20 && resultado <= 23) {
+                fotoEstado.setAttribute("src", "./assets/img/homeroMamado.png");
+            } else if (resultado > 23) {
+                fotoEstado.setAttribute("src", "./assets/img/homeroConEsteroides.png");
+            }
+        } else {
+            if (resultado <= 17) {
+                fotoEstado.setAttribute("src", "./assets/img/homeroDesnutrido.png");
+            } else if (resultado > 17) {
+                fotoEstado.setAttribute("src", "./assets/img/homeroNormal.png");
+            }
+        }
+    }
+
+
 };
 
 /* calcula el bmr/metabolismo basal y lo representa en el html */
@@ -322,11 +370,6 @@ const mc = function () {
 /* llama las 3 funciones principales */
 
 const calcularFfmiBrmMc = function () {
-
-    /* if (arrayPersonas[idSeleccionado].nombre == "sin nombre") {
-        return;
-    } */
-
     calcularFFMI();
     calcularBMR();
     mc();
@@ -403,6 +446,7 @@ const calcularCBDC = function () {
         </table>`)
 
     let botonCalcularCBDC = document.getElementById("calcularCDBC");
+
     botonCalcularCBDC.addEventListener("click", calcularCBDC);
 
 }
@@ -548,6 +592,10 @@ let listaPersonasHTML = document.getElementById("personasLista");
 
 const actualizarListaPersonasHTML = function () {
 
+    if (idSeleccionado == undefined) {
+        idSeleccionado = arrayPersonas.length - 1;
+    }
+
 
     let htmlLista = "";
 
@@ -563,13 +611,14 @@ const actualizarListaPersonasHTML = function () {
 
 }
 
-setInterval(actualizarListaPersonasHTML, 1000);
+actualizarListaPersonasHTML();
 
 listaPersonasHTML.addEventListener("click", function (event) {
     if (event.target.tagName === "BUTTON") {
         idSeleccionado = event.target.id;
         datosPersona();
         calcularFfmiBrmMc();
+        actualizarListaPersonasHTML();
     }
 });
 
@@ -630,7 +679,7 @@ const guardarPersona = async function () {
         return;
     }
 
-    if (peso < 35 || peso > 150) {
+    if (peso < 35 || peso > 180) {
 
         Swal.fire({
             title: "Persona no guardada!",
@@ -675,6 +724,8 @@ const guardarPersona = async function () {
 
     calcularFfmiBrmMc();
 
+    actualizarListaPersonasHTML();
+
 }
 
 
@@ -702,6 +753,13 @@ bnCrearPersona.addEventListener("click", function () {
 
     datosPersona();
 
+    idSeleccionado = arrayPersonas.length - 1;
+
+    actualizarListaPersonasHTML();
+
+    calcularFfmiBrmMc();
+
+    datosPersona();
 })
 
 let bnEliminarPersona = document.getElementById("botonEliminarPersona");
@@ -710,8 +768,21 @@ let bnEliminarPersona = document.getElementById("botonEliminarPersona");
 
 bnEliminarPersona.addEventListener("click", function () {
 
+    if (idSeleccionado == undefined) {
+        idSeleccionado = arrayPersonas.length - 1;
+    }
+
+    if (idSeleccionado == 0 || idSeleccionado == 1 || idSeleccionado == 2) {
+        Swal.fire({
+            title: `Es imposible eliminar a ${arrayPersonas[idSeleccionado].nombre}...`,
+
+            icon: "error"
+        });
+        return;
+    }
+
     Swal.fire({
-        title: "Estas Seguro?",
+        title: "¿Estas seguro de que deseas borrar a " + arrayPersonas[idSeleccionado].nombre + "?",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -746,7 +817,9 @@ bnEliminarPersona.addEventListener("click", function () {
 
             localStorage.setItem("personas", JSON.stringify(arrayPersonas));
 
-            idSeleccionado = undefined;
+            idSeleccionado = arrayPersonas.length - 1;
+
+            actualizarListaPersonasHTML();
 
         }
     });
@@ -755,6 +828,165 @@ bnEliminarPersona.addEventListener("click", function () {
 
 
 });
+
+/* llama la atencion de la tienda para que la vean */
+
+const popStore = function () {
+
+    document.getElementById("tienda").setAttribute("class", "animate__heartBeat");
+
+}
+
+setTimeout(popStore, 7000);
+
+const parpadearBordeRojo = function (elemento) {
+    let borderOriginal = elemento.style.border;
+    let parpadeos = 8;
+    let parpadeosHechos = 0;
+    let intervalo = setInterval(() => {
+        if (parpadeosHechos < parpadeos) {
+
+            elemento.style.border =
+                (parpadeosHechos % 2 === 0) ? '3px solid red' : borderOriginal;
+            parpadeosHechos++;
+        } else {
+            clearInterval(intervalo);
+            elemento.style.border = borderOriginal;
+        }
+    }, 300);
+}
+
+async function ayuda() {
+
+
+    await swal.fire({
+        position: "bottom-end",
+        title: 'Bienvenido a GymBro Calculator',
+        text: "Mediante este servicio usted podra obtener datos de utilidad sobre alimentacion y estado fisico",
+        icon: 'info',
+        confirmButtonText: 'OK',
+        backdrop: false,
+        allowOutsideClick: false,
+
+    })
+
+    parpadearBordeRojo(bnCrearPersona);
+
+    await swal.fire({
+        position: "bottom-end",
+        title: 'Paso 1 añadir una persona',
+        text: "En el menu en celeste podra añadir hasta 10 personas y eliminar con excepción de los 3 primeros que son referentes, puede cambiar sus datos para curiosear pero no se guardaran al refrescar la pagina.",
+        icon: 'info',
+        confirmButtonText: 'OK',
+        backdrop: false,
+        allowOutsideClick: false,
+
+    })
+
+    parpadearBordeRojo(botonGuardarPersonaHtml);
+
+    await swal.fire({
+        position: "bottom-end",
+        title: 'Paso 2 llenar los datos',
+        text: "Rellene los datos, caso de no saber su porcentaje de grasa corporal, no se preocupe, deje el slot como esta y presione 'Guardar Persona'",
+        icon: 'info',
+        confirmButtonText: 'OK',
+        backdrop: false,
+        allowOutsideClick: false,
+
+    })
+
+    parpadearBordeRojo(document.getElementById("calculadoraDeGrasa"));
+
+    await swal.fire({
+        position: "bottom-end",
+        title: 'Si usted no ingreso la grasa corporal puede hacer uso de la calculadora.',
+        text: "Al ingresar los datos devela el porcentaje de grasa coporal, que si bien no es tan precisa como si una balanza con chip bia (tampoco es muy precisa) pero da una orientacion, una vez sepa su % de grasa reingrese sus datos, repita el paso 1 y 2.",
+        icon: 'info',
+        confirmButtonText: 'OK',
+        backdrop: false,
+        allowOutsideClick: false,
+
+    })
+
+    parpadearBordeRojo(document.getElementById("contadorDeCaloriasQuemadas"));
+
+    await swal.fire({
+        position: "bottom-end",
+        title: 'Explorando las herramientas',
+        text: "Se observa varias herramientas el contador de quema de calorias es una forma orientativa de cuantas calorias quemas en un cardio segun las pulsaciones por minuto, rudumentario pero funcional, utliza los datos como el peso, edad, altura y porcentaje de grasa para sacar un estimado de la quema.",
+        icon: 'info',
+        confirmButtonText: 'OK',
+        backdrop: false,
+        allowOutsideClick: false,
+
+    })
+
+    parpadearBordeRojo(document.getElementById("ffmi"));
+
+    await Swal.fire({
+        position: "bottom-end",
+        title: "FFMI",
+        text: "Como puede observar se puede obtener el puntaje FFMI.",
+        icon: "info",
+        confirmButtonText: 'OK',
+        backdrop: false,
+        allowOutsideClick: false,
+    });
+
+    await Swal.fire({
+        position: "bottom-end",
+        imageUrl: "../assets/img/siLeSeAlDeHechoMeme.png",
+        title: "Evaluación muscular, detección de anomalías y muchos usos más...",
+        text: "El FFMI (Índice de Masa Libre de Grasa) mide la cantidad de masa muscular en relación con la altura, excluyendo la grasa corporal. Un FFMI entre 18 y 22 es normal y saludable. Valores superiores a 22 pueden indicar alta masa muscular, valores muy altos son señales de uso de esteroides. Un FFMI por debajo de 17 puede ser bajo y señalar insuficiencia muscular, desnutrición, o problemas de salud, lo que aconseja consultar a un profesional.",
+        confirmButtonText: 'OK',
+    });
+
+    parpadearBordeRojo(document.getElementById("bmr"));
+
+    await Swal.fire({
+        position: "bottom-end",
+        title: "BMR",
+        text: "En esta tabla usted puede ver su metabolismo basal.",
+        icon: "question",
+        confirmButtonText: 'OK',
+        backdrop: false,
+        allowOutsideClick: false,
+    });
+
+    await Swal.fire({
+        position: "bottom-end",
+        imageUrl: "../assets/img/realmente.jpg",
+        title: "La base de la alimentación y la planificación de cualquier objetivo...",
+        text: "El BRM es la cantidad de energía que el cuerpo necesita para mantener funciones básicas en reposo, como la respiración, la circulación sanguínea y la regulación de la temperatura corporal. Se mide en calorías y representa la energía mínima necesaria para sobrevivir cuando el cuerpo está en reposo total.",
+        confirmButtonText: 'OK',
+    });
+
+    parpadearBordeRojo(document.getElementById("mc"));
+
+    await Swal.fire({
+        position: "bottom-end",
+        title: "Calculadora de macros...",
+        text: "En esta tabla puede tener una orientación de su alimentación",
+        icon: "question",
+        confirmButtonText: 'OK',
+        backdrop: false,
+        allowOutsideClick: false,
+    });
+
+    await Swal.fire({
+        position: "bottom-end",
+        imageUrl: "../assets/img/estadisticamente.jpg",
+        title: "Una guia basica de por donde empezar a la hora de mejorar la alimentacion...",
+        text: "Un macro calculator calcula la cantidad ideal de proteínas, carbohidratos y grasas según tus datos personales y objetivos. Introduces información como tu peso, altura y actividad, y el cálculo te da un desglose de calorías y macronutrientes para ayudarte a planificar tu dieta.",
+        confirmButtonText: 'OK',
+    });
+
+}
+
+
+botonAyuda.addEventListener("click", ayuda);
+
 
 
 
