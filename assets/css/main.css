@@ -33,18 +33,25 @@
   align-items: center;
   justify-content: center;
 }
-.mainTienda .tiendaContenedor .producto {
+.mainTienda .tiendaContenedor ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.mainTienda .tiendaContenedor ul .producto {
   display: flex;
   flex-direction: row;
   align-items: center;
   border-radius: 10px;
   background-color: #c573da;
   margin: 16px 8px 16px 8px;
-  height: 8rem;
+  height: 9rem;
   width: 22rem;
 }
-.mainTienda .tiendaContenedor .producto img {
-  height: 8rem;
+.mainTienda .tiendaContenedor ul .producto img {
+  height: 9rem;
   width: 8rem;
   object-fit: cover;
   overflow: hidden;
@@ -52,20 +59,20 @@
   mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 15%, rgb(0, 0, 0) 100%);
   -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10%, rgb(0, 0, 0) 100%);
 }
-.mainTienda .tiendaContenedor .producto .infoProducto h2 {
+.mainTienda .tiendaContenedor ul .producto .infoProducto h2 {
   margin: 4px 0px 0px 16px;
   font-size: 1rem;
   width: 200px;
 }
-.mainTienda .tiendaContenedor .producto .infoProducto p {
+.mainTienda .tiendaContenedor ul .producto .infoProducto p {
   margin: 4px 0px 0px 16px;
   width: 200px;
   font-size: 14px;
 }
-.mainTienda .tiendaContenedor .producto .precioYSeleccionado {
+.mainTienda .tiendaContenedor ul .producto .precioYSeleccionado {
   display: none;
 }
-.mainTienda .tiendaContenedor .botonCompra {
+.mainTienda .tiendaContenedor #bnCarrito {
   display: inline-block;
   margin-left: 1px;
   font-size: 2rem;
@@ -78,30 +85,30 @@
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
-.mainTienda .tiendaContenedor .botonCompra:hover {
+.mainTienda .tiendaContenedor #bnCarrito:hover {
   background-color: #33ff00;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
-.mainTienda .tiendaContenedor .botonCompra:active {
+.mainTienda .tiendaContenedor #bnCarrito:active {
   background-color: #e2a41e;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(0);
 }
-.mainTienda .producto:hover .infoProducto {
+.mainTienda .tiendaContenedor .producto:hover .infoProducto {
   display: none;
 }
-.mainTienda .producto:hover .precioYSeleccionado {
+.mainTienda .tiendaContenedor .producto:hover .precioYSeleccionado {
   display: flex;
   flex-direction: column;
   margin-left: 60px;
   margin-bottom: 37px;
 }
-.mainTienda .producto:hover .precioYSeleccionado h3 {
+.mainTienda .tiendaContenedor .producto:hover .precioYSeleccionado h3 {
   font-size: 1.3rem;
   margin: 20px 0 8px;
 }
-.mainTienda .producto:hover .precioYSeleccionado #paqueteSeleccionado {
+.mainTienda .tiendaContenedor .producto:hover .precioYSeleccionado #paqueteSeleccionado {
   display: inline-block;
   padding: 7px 5px;
   margin-left: 1px;
@@ -115,19 +122,38 @@
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
-.mainTienda .producto:hover .precioYSeleccionado #paqueteSeleccionado:hover {
+.mainTienda .tiendaContenedor .producto:hover .precioYSeleccionado #paqueteSeleccionado:hover {
   background-color: #0056b3;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
-.mainTienda .producto:hover .precioYSeleccionado #paqueteSeleccionado:active {
+.mainTienda .tiendaContenedor .producto:hover .precioYSeleccionado #paqueteSeleccionado:active {
   background-color: #e2a41e;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(0);
 }
-
-.carritoYCompra {
+.mainTienda .tiendaContenedor #completarCompra {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainTienda .tiendaContenedor #completarCompra h3 {
+  display: flex;
+  justify-content: center;
+}
+.mainTienda .tiendaContenedor #completarCompra form {
+  display: flex;
+  flex-direction: column;
+}
+.mainTienda .tiendaContenedor #completarCompra #comprar {
+  margin-top: 1rem;
+  background-color: #33ff00;
+}
+.mainTienda .tiendaContenedor #completarCompra #cerrarCarrito {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #0056b3;
 }
 
 .footerTienda {
@@ -168,7 +194,7 @@
   flex-direction: row;
   justify-content: center;
   margin: 0;
-  background-image: url(/assets/img/fondoBody.jpeg);
+  background-image: url("../img/fondoBody.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -227,6 +253,7 @@
 .bodyIndex .headerIndex .persona .nombrePersona {
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 .bodyIndex .headerIndex .persona .nombrePersona input {
   width: 100%;
@@ -288,6 +315,7 @@
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
+  overflow: hidden;
   color: #fff;
   background-color: #75C7FF;
   border: 2px solid transparent;
@@ -312,6 +340,7 @@
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
+  overflow: hidden;
   color: #fff;
   background-color: #75C7FF;
   border: 2px solid transparent;
@@ -353,7 +382,7 @@
 .bodyIndex .mainIndex .calculadorasIndex .dobleCalculadoraEspacio .cbdc {
   margin-right: 1.5%;
   width: 50%;
-  border: 1px solid #1b1b1b;
+  border: 2px solid #1b1b1b;
 }
 .bodyIndex .mainIndex .calculadorasIndex .dobleCalculadoraEspacio .cbdc div {
   width: 95%;
@@ -447,7 +476,7 @@
   border-bottom: 0;
 }
 .bodyIndex .mainIndex .calculadorasIndex .dobleCalculadoraEspacio .grasaCoporalMarineMetodo {
-  border: 1px solid #1b1b1b;
+  border: 2px solid #1b1b1b;
   display: flex;
   flex-direction: column;
   margin-left: 1.5%;
@@ -537,7 +566,7 @@
 .bodyIndex .mainIndex .calculadorasIndex .ffmiCalculadora {
   display: flex;
   flex-direction: row;
-  border: 1px solid rgba(0, 0, 0, 0.6509803922);
+  border: 2px solid rgba(0, 0, 0, 0.6509803922);
 }
 .bodyIndex .mainIndex .calculadorasIndex .ffmiCalculadora div {
   display: flex;
@@ -571,7 +600,7 @@
   transition: width 0.4s ease;
 }
 .bodyIndex .mainIndex .calculadorasIndex .bmrCalculadora {
-  border: 1px solid rgba(0, 0, 0, 0.6509803922);
+  border: 2px solid rgba(0, 0, 0, 0.6509803922);
   padding: 0;
 }
 .bodyIndex .mainIndex .calculadorasIndex .bmrCalculadora table {
@@ -612,7 +641,7 @@
   border-bottom: 0;
 }
 .bodyIndex .mainIndex .calculadorasIndex .mcCalculadora {
-  border: 1px solid rgba(0, 0, 0, 0.6509803922);
+  border: 2px solid rgba(0, 0, 0, 0.6509803922);
   padding: 0;
   font-size: 0.8rem;
 }

@@ -8,7 +8,7 @@
     flex-direction: row;
     justify-content: center;
     margin: 0;
-    background-image: url(/assets/img/fondoBody.jpeg);
+    background-image: url('../img/fondoBody.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -83,6 +83,7 @@
             .nombrePersona {
                 display: flex;
                 justify-content: center;
+                overflow: hidden;
 
                 input {
                     width: 100%;
@@ -169,6 +170,7 @@
                 display: inline-block;
                 padding: 10px 20px;
                 font-size: 16px;
+                overflow: hidden;
                 color: #fff;
                 background-color: $colorFooter;
                 border: 2px solid transparent;
@@ -196,6 +198,7 @@
                 display: inline-block;
                 padding: 10px 20px;
                 font-size: 16px;
+                overflow: hidden;
                 color: #fff;
                 background-color: $colorFooter;
                 border: 2px solid transparent;
@@ -245,7 +248,7 @@
 
                     margin-right: 1.5%;
                     width: 50%;
-                    border: 1px solid #1b1b1b;
+                    border: 2px solid #1b1b1b;
 
                     div {
 
@@ -361,7 +364,7 @@
                 }
 
                 .grasaCoporalMarineMetodo {
-                    border: 1px solid #1b1b1b;
+                    border: 2px solid #1b1b1b;
                     display: flex;
                     flex-direction: column;
                     margin-left: 1.5%;
@@ -466,7 +469,7 @@
             .ffmiCalculadora {
                 display: flex;
                 flex-direction: row;
-                border: 1px solid #000000a6;
+                border: 2px solid #000000a6;
 
 
                 div {
@@ -511,7 +514,7 @@
 
             .bmrCalculadora {
 
-                border: 1px solid #000000a6;
+                border: 2px solid #000000a6;
                 padding: 0;
 
                 table {
@@ -564,7 +567,7 @@
 
             .mcCalculadora {
 
-                border: 1px solid #000000a6;
+                border: 2px solid #000000a6;
                 padding: 0;
                 font-size: 0.8rem;
 

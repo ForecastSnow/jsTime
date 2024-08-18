@@ -375,7 +375,7 @@ const calcularFfmiBrmMc = function () {
     mc();
 }
 
-/* calcula muuuy aproximadamente la quema de calorias de cualquier Cardio basado en el fisico y las pulsaciones por minuto */
+/* calcula muy "aproximadamente" la quema de calorias de cualquier Cardio basado en el fisico y las pulsaciones por minuto */
 
 const calcularCBDC = function () {
 
@@ -440,7 +440,7 @@ const calcularCBDC = function () {
                 <th class="cuadroSlotArribaDerecha">${parseInt((((-55.0969 + (0.6309 * 140) + (0.1988 * arrayPersonas[idSeleccionado].peso) + (0.2017 * arrayPersonas[idSeleccionado].edad)) / 4.184) * duracion))}</th>
             </tr>
             <tr>
-                <th class="cuadroSlotAbajo">160-200PPM</th>
+                <th class="cuadroSlotAbajo">200PPM++</th>
                 <th class="cuadroSlotAbajoFinal">${parseInt((((-55.0969 + (0.6309 * 160) + (0.1988 * arrayPersonas[idSeleccionado].peso) + (0.2017 * arrayPersonas[idSeleccionado].edad)) / 4.184) * duracion))}</th>
             </tr>
         </table>`)
@@ -764,7 +764,7 @@ bnCrearPersona.addEventListener("click", function () {
 
 let bnEliminarPersona = document.getElementById("botonEliminarPersona");
 
-/* el evet de abajo elimina el usuario seleccionado o el ultimo agregado tambien ordena */
+/* el evet de abajo elimina el usuario seleccionado o el ultimo agregado, tambien ordena los id */
 
 bnEliminarPersona.addEventListener("click", function () {
 
@@ -829,7 +829,7 @@ bnEliminarPersona.addEventListener("click", function () {
 
 });
 
-/* llama la atencion de la tienda para que la vean */
+/* pequeña animacion que llama la atencion de la tienda para que la vean */
 
 const popStore = function () {
 
@@ -847,7 +847,7 @@ const parpadearBordeRojo = function (elemento) {
         if (parpadeosHechos < parpadeos) {
 
             elemento.style.border =
-                (parpadeosHechos % 2 === 0) ? '3px solid red' : borderOriginal;
+                (parpadeosHechos % 2 === 0) ? '2px solid red' : borderOriginal;
             parpadeosHechos++;
         } else {
             clearInterval(intervalo);
@@ -901,7 +901,7 @@ async function ayuda() {
     await swal.fire({
         position: "bottom-end",
         title: 'Si usted no ingreso la grasa corporal puede hacer uso de la calculadora.',
-        text: "Al ingresar los datos devela el porcentaje de grasa coporal, que si bien no es tan precisa como si una balanza con chip bia (tampoco es muy precisa) pero da una orientacion, una vez sepa su % de grasa reingrese sus datos, repita el paso 1 y 2.",
+        text: "Al ingresar los datos devela el porcentaje de grasa coporal, que si bien no es tan precisa como si una balanza con chip bia (tampoco es muy precisa) pero da una orientacion, una vez sepa su % de grasa reingrese sus datos, repita el paso 2.",
         icon: 'info',
         confirmButtonText: 'OK',
         backdrop: false,

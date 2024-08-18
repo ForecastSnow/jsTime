@@ -49,68 +49,46 @@
 
     <main class="mainTienda">
 
-        <section class="tiendaContenedor" id="listaProductos">
+        <section class="tiendaContenedor" id="tiendaContenedorID">
 
+            <ul id="listaProductos">
+                
 
-            <div class="producto">
-
-                <img src="../assets/img/platoSaludable.jpeg" alt="">
-                <div class="infoProducto">
-                    <h2>Bajar de peso es vivir mejor</h2>
-                    <p>Bajar de peso es vivir mejor porque te da más energía, mejora tu salud y eleva tu autoestima. Es
-                        una inversión en tu bienestar general.</p>
-                </div>
-
-                <div class="precioYSeleccionado">
-                    <h3 id="precio">Precio: 30000</h3>
-                    <button id="paqueteSeleccionado">añadir paquete</button>
-                </div>
-            </div>
-
-            <div class="producto">
-                <div>
-
-                </div>
-                <img src="" alt="">
-                <div class="infoProducto">
-                    <h2>Vivir mejor es mantenerse en forma</h2>
-                    <p></p>
-                </div>
-            </div>
-
-            <div class="producto">
-                <img src="" alt="">
-                <div class="infoProducto">
-                    <h2>Ganar masa muscular es vivir a largo plazo</h2>
-                    <p></p>
-                </div>
-            </div>
+            </ul>
 
             <div>
-                <button class="botonCompra" id="comprar">Carrito</button>
+                <button id="bnCarrito">Carrito</button>
             </div>
 
-            <div class="carritoYCompra">
-
+            <div id="completarCompra">
                 <h3>Verifica tus productos</h3>
                 <ul id="productosSeleccionados">
 
                 </ul>
-                <form action="/procesar-compra" method="post">
 
+
+                <form>
+
+                    <label for="email">Email:</label required>
+                    <input type="mail" name="email" placeholder="juan@gmail.com">
+                        <label for="celular">celulara:</label>
+                    <input type="number" name="celular" placeholder="54 11 234 5678" maxlength="15"
+                        pattern="\d{2} \d{2} \d{3} \d{4}">
 
                     <label for="numeroDeTarjeta">Número de Tarjeta:</label>
-                    <input type="number" name="numeroDeTarjeta" placeholder="1234 5678 9012 3456"
-                        maxlength="19" pattern="\d{4} \d{4} \d{4} \d{4}" required>
+                    <input type="number" name="numeroDeTarjeta" placeholder="1234 5678 9012 3456" maxlength="19"
+                        pattern="\d{4} \d{4} \d{4} \d{4}">
 
                     <label for="vencimientoTarjeta">Fecha de Expiración:</label>
-                    <input type="month" name="vencimientoTarjeta" required>
+                    <input type="month" name="vencimientoTarjeta">
 
                     <label for="cvv">Código de Seguridad (CVV):</label>
                     <input type="text" id="cvv" placeholder="123" maxlength="3" pattern="\d{3}" required>
 
-                    <button type="submit">Comprar</button>
+                    <button id="comprar">Comprar</button>
                 </form>
+
+                <button id="cerrarCarrito">Volver a productos.</button>
 
             </div>
 
@@ -133,6 +111,7 @@
 
 
         </div>
+
         <div>
 
             <a href="../index.html"> <img class="calculadorasEnlace" src="../assets/img/calculadoraIcono.png"
