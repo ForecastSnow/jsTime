@@ -987,6 +987,7 @@ async function ayuda() {
 
 botonAyuda.addEventListener("click", ayuda);
 
-
-
+if (idSeleccionado == -1) {
+    location.reload();
+};
 
